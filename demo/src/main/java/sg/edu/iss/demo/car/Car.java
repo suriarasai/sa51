@@ -13,8 +13,6 @@ public class Car implements Comparable<Car> {
 	private String brand, model, color, registerNumber;
 	private int year, price;
 	public Car() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Car(long id, String brand, String model, String color, String registerNumber, int year, int price) {
 		super();

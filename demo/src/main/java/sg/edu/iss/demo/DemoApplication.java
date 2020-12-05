@@ -26,16 +26,34 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> { 
-		     carrepo.save(new Car("Toyota", "Rush", "Silver", "SJB6789H", 2013, 123456));
-		     carrepo.save(new Car("Ford", "Mustang", "Black", "SJB6459H", 2015, 123456));
+		     carrepo.save(new Car("Toyota", "Rush", "Silver", "SJB6789H", 2013, 23456));
+		     carrepo.save(new Car("Ford", "Mustang", "Black", "SJB6459H", 2015, 43456));
 		     carrepo.save(new Car("Honda", "Jazz", "Red", "SEF1234I", 2016, 123456));
 		     System.out.println("Reading from database");
+		     System.out.println("FindAll");
 		     ArrayList<Car> clist = new ArrayList<Car>();
 		     clist = (ArrayList<Car>) carrepo.findAll();
 		     for (Iterator<Car> iterator = clist.iterator(); iterator.hasNext();) {
 				Car car =  iterator.next();
 				System.out.println(car.toString());
 			}
+		    
+		     System.out.println("FindByBrandLike");
+		     ArrayList<Car> clist1 = new ArrayList<Car>();
+		     clist1 = (ArrayList<Car>) carrepo.findByBrandLike("H%");
+		     for (Iterator<Car> iterator = clist1.iterator(); iterator.hasNext();) {
+				Car car =  iterator.next();
+				System.out.println(car.toString());
+			}
+		   
+			
+			  System.out.println("FindByPriceGreaterThan"); ArrayList<Car> clist2 = new
+			  ArrayList<Car>(); clist2 = (ArrayList<Car>)
+			  carrepo.findByPriceGreaterThan(100000); for (Iterator<Car> iterator =
+			  clist2.iterator(); iterator.hasNext();) { Car car = iterator.next();
+			  System.out.println(car.toString()); }
+			 
+		     
 		};
 	}
 
