@@ -40,7 +40,7 @@ public class DemoApplication {
 		    
 		     System.out.println("FindByBrandLike");
 		     ArrayList<Car> clist1 = new ArrayList<Car>();
-		     clist1 = (ArrayList<Car>) carrepo.findByBrandLike("H%");
+		     clist1 = (ArrayList<Car>) carrepo.findCarsByBrandLike("T%");
 		     for (Iterator<Car> iterator = clist1.iterator(); iterator.hasNext();) {
 				Car car =  iterator.next();
 				System.out.println(car.toString());
@@ -49,7 +49,7 @@ public class DemoApplication {
 			
 			  System.out.println("FindByPriceGreaterThan"); ArrayList<Car> clist2 = new
 			  ArrayList<Car>(); clist2 = (ArrayList<Car>)
-			  carrepo.findByPriceGreaterThan(100000); for (Iterator<Car> iterator =
+			  carrepo.findCarsByPriceGreaterThan(100000); for (Iterator<Car> iterator =
 			  clist2.iterator(); iterator.hasNext();) { Car car = iterator.next();
 			  System.out.println(car.toString()); }
 			 

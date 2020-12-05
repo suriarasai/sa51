@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CarRepository extends JpaRepository<Car, Long> {
     
-	public ArrayList<Car> findByBrandLike(String s);
-	public ArrayList<Car> findByPriceGreaterThan(int p);
+	public ArrayList<Car> findCarsByBrandLike(String s);
+	public ArrayList<Car> findCarsByPriceGreaterThan(int p);
 	
 }
