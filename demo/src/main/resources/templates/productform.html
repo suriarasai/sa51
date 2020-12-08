@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all" 
+          th:href="@{/css/style.css}" />
+<title>Product Form</title>
+</head>
+<body>
+<h1>Product Form</h1>
+<form action="" th:object="${product}" th:action="@{/product/save}" method="get">
+        <fieldset>
+		     <input type="hidden" th:field="*{id}">  
+		</fieldset>
+		<fieldset>
+			Name: <input type="text" th:field="*{name}">
+			<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+		</fieldset>
+		<fieldset>
+			Brand: <input type="text" th:field="*{brand}">
+		</fieldset>
+		<fieldset>
+			Description: <input type="text" th:field="*{description}">
+		</fieldset>
+		
+		<fieldset>
+			Price: <input type="text" th:field="*{price}">
+			<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+		</fieldset>
+		<fieldset>
+			Date of Manufacture: <input type="text" th:field="*{dom}" placeholder="dd-MM-yyyy"
+              th:text="${#dates.format(product.dom, 'dd-MM-yyyy')}"/>
+       			<p th:if="${#fields.hasErrors('dom')}" th:errors="*{dom}"></p>
+		</fieldset>
+		<fieldset>
+			<button type="submit" >Save</button>
+		</fieldset>
+</form>
+</body>
+</html>

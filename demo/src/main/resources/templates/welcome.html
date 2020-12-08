@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/style.css"  th:href="@{/css/style.css}" />
+<title>sa51 Title</title>
+</head>
+<body>
+<h1>Welcome Page</h1>
+<h2>Spring Web Class</h2>
+<p>Hello SA51 Folks - This is a simple HTML Page.</p>
+<p th:text="${today}">1 January 2020</p>
+<p th:text="${name}">Default Name</p>
+</body>
+</html>
