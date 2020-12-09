@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Catalogue Page</title>
+</head>
+<body>
+  <header th:insert="layout/layout.html :: header"></header>
+  <div th:replace="layout/layout.html :: menu" ></div>
+  <h1>Listing</h1>
+  <table>
+ <tr>
+   <th>ID</th>
+   <th>NAME</th>
+   <th>DESCRIPTION</th>
+   <th>SUPPLIER NAME</th>
+   <th>SUPPLIER ADDRESS</th>
+   <th>SUPPLIER PHONE</th>
+   <th>SUPPLIER EMAIL</th>
+   <th>PRICE</th>
+ </tr>
+ <tr th:each="product:${plist}">
+   <td th:text="${product.id}">ID</td> 
+   <td th:text="${product.productName}">ID</td>
+   <td th:text="${product.productDescription}">ID</td>
+   <td th:text="${product.supplier.supplierName}">ID</td>
+   <td th:text="${product.supplier.supplierAddress}">ID</td>
+   <td th:text="${product.supplier.phone}">ID</td>
+   <td th:text="${product.supplier.email}">ID</td>
+   <td th:text="${product.price}">ID</td>
+ </tr>
+</table>
+  <div th:replace="layout/layout.html :: footer"></div>
+</body>
+</html>

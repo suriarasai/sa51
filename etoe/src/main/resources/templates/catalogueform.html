@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<header th:insert="layout/layout.html :: header"></header>
+	<div th:replace="layout/layout.html :: menu"></div>
+	<h1>Form</h1>
+	<form action="" th:object="${product}" th:action="@{/catalogue/save}"
+		method="POST" class="form-horizontal">
+		<fieldset>
+			<input type="hidden" th:field="*{id}" />
+			<input type="hidden"
+				th:field="*{supplier.id}" />
+		</fieldset>
+		<fieldset>
+			Name: <input type="text" th:field="*{productName}">
+		</fieldset>
+		<fieldset>
+			Description: <input type="text" th:field="*{productDescription}">
+		</fieldset>
+		<fieldset>
+			Price: <input type="text" th:field="*{price}">
+		</fieldset>
+		<fieldset>
+			ROL: <input type="text" th:field="*{rol}">
+		</fieldset>
+		<fieldset>
+			Supplier Name: <input type="text" th:field="*{supplier.supplierName}">
+		</fieldset>
+		<fieldset>
+			Supplier Address: <input type="text" th:field="*{supplier.supplierAddress}">
+		</fieldset>
+		<fieldset>
+			Supplier Phone: <input type="text" th:field="*{supplier.phone}">
+		</fieldset>
+		<fieldset>
+			Supplier Email: <input type="email" th:field="*{supplier.email}">
+		</fieldset>
+		
+		<fieldset>
+			<button type="submit">Save</button>
+		</fieldset>
+	</form>
+	<div th:replace="layout/layout.html :: footer"></div>
+</body>
+</html>

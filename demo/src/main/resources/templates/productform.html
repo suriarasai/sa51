@@ -32,9 +32,7 @@
               th:text="${#dates.format(product.dom, 'dd-MM-yyyy')}"/>
        			<p th:if="${#fields.hasErrors('dom')}" th:errors="*{dom}"></p>
 		</fieldset>
-		<fieldset>
-			<button type="submit" >Save</button>
-		</fieldset>
+		
 </form>
 </body>
 </html>
