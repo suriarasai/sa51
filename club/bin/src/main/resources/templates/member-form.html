@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Member Form</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/style.css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:insert="fragments/general.html :: header"> </header>
+	<div th:replace="fragments/general.html :: menu"></div>
+
+	<h1>Member Form</h1>
+	<form action="#" th:object="${member}" th:action="@{/member/save}"
+		method="post">
+		<fieldset>
+			<input type="hidden" th:field="*{memberId}">
+		</fieldset>
+		<fieldset>
+			First Name <input type="text" th:field="*{firstName}">
+			<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+		</fieldset>
+		<fieldset>
+			Second Name <input type="text" th:field="*{secondName}">
+			<p th:if="${#fields.hasErrors('secondName')}"
+				th:errors="*{secondName}"></p>
+		</fieldset>
+		<fieldset>
+			Last Name <input type="text" th:field="*{lastName}">
+			<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+		</fieldset>
+
+		<fieldset>
+			User Name <input type="text" th:field="*{username}">
+			<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+		</fieldset>
+		<fieldset>
+			Password <input type="password" th:field="*{password}">
+			<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+		</fieldset>
+
+		<fieldset>
+			<input type="submit" value="Save" /> &nbsp; &nbsp; <input
+				type="reset" value="Reset" />
+		</fieldset>
+
+	</form>
+	<br />
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>

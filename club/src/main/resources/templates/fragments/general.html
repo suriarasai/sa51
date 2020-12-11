@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+<meta charset="UTF-8" />
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:fragment="header" id="header">
+		<table>
+			<tr>
+				<td width="15%"><img th:src="@{/image/club.png}" /></td>
+				<td><h1>Facility Booking System</h1></td>
+			</tr>
+		</table>
+
+	</div>
+	<div th:fragment="menu" id="menu">
+		<table>
+			<tr>
+				<td><input type="button" value="Manage Members"
+					onclick="window.location.href='/member/list'; return false"
+					class="button" /> <input type="button" value="Manage Facilities"
+					onclick="window.location.href='/facility/list'; return false"
+					class="button" /> <input type="button" value="Manage Booking"
+					onclick="window.location.href='/booking/list'; return false"
+					class="button" /></td>
+			</tr>
+		</table>
+	</div>
+	<footer th:fragment="footer">
+		<a href="Home" th:href="@{/}">Back to Home</a>
+		<br/>
+		 <small>Now is: <b
+			th:text="${execInfo.now.time}"></b></small> <br /> <small>(c)Facility
+			Booking System , ISS, NUS 2020</small>
+	</footer>
+</body>
+</html>

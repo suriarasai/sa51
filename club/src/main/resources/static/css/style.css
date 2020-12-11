@@ -1,0 +1,156 @@
+BODY {
+	font-family : calbiri ;
+	font-size : 10pt;
+	
+}
+
+A {
+	text-decoration: underline;
+	color: #6600CC;
+}
+
+A:Hover {
+	text-decoration: underline;
+	color: #CC0066;
+}
+
+h1 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;  
+	font-size: 21px;
+	line-height: 60px;
+	padding: 15px 15px 15px 15%;
+	color: #355681;
+}
+
+h2 {
+	margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	position: relative;
+	text-shadow: 0 -1px rgba(0,0,0,0.6);
+	font-size: 18px;
+	line-height: 40px;
+	color: #355681;
+	font-family: 'Muli', sans-serif;
+}
+
+h3 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+	font-size: 15px;
+	line-height: 40px;
+	color: #355681;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(53,86,129, 0.3);
+}
+
+h4 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	font-size: 12px;
+	line-height: 20px;
+	color: #788699;
+	font-family: 'Muli', sans-serif;
+}
+
+button {
+	border : thin;
+	border-style : none none none none;
+	background : transparent;
+	margin : 0px 0px 0px 0px;
+	padding : 0px 0px 0px 0px;
+	white-space : normal;
+	width : auto;
+}
+
+frame	{
+	margin : 0px 0px 0px 0px;
+	border : none;
+	border-width : 0px 0px 0px 0px;
+	padding : 0px 0px 0px 0px;
+}
+
+ul {
+    margin: 0; 
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white; 
+    padding: 10.5px 11px;
+    background-color: #002b55;
+    display:block;
+}
+ 
+ul li a:visited {
+    color: white;
+}
+ 
+ ul li a:hover, ul li  {
+    color: white;
+    background-color: #675FD3      ;
+}
+
+table
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	border-collapse: collapse;
+	
+}
+th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #039;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+td
+{
+	color: #669;
+	padding: 9px 8px 0px 8px;
+	
+}
+tbody tr:hover td
+{
+	color: #009;
+}
+
+.bclass button {
+    background-color: #002b55; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+error {
+	font-family : calbiri ;
+	font-size : 10pt;
+	color: red;
+}

@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Facility Booking System</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:insert="fragments/general.html :: header"> </header>
+	<div th:replace="fragments/general.html :: menu"></div>
+	<h1>Error Page</h1>
+	<h2> Booking Dates</h2>
+	<p class="error">
+	The Facility is not available for booking in this date range.
+	</p>
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>

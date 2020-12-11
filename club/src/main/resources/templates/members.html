@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Members Listing</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/style.css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:insert="fragments/general.html :: header"> </header>
+	<div th:replace="fragments/general.html :: menu"></div>
+
+	<h1>Member Listing</h1>
+	<!-- Add Hyperlink -->
+	<a href="AddMember.html" th:href="@{/member/add}">Add Member</a>
+
+	<h2 th:if="${not #lists.isEmpty(members)}">Member List</h2>
+	<table th:if="${not #lists.isEmpty(members)}" >
+		<tr >
+			<th >Member Id</th>
+			<th >First Name</th>
+			<th >Second Name</th>
+			<th >Last Name</th>
+			<th >User Name</th>
+			<th >Password</th>
+			<th >Edit Member</th>
+			<th >Delete Member</th>
+		</tr>
+		<tr th:each="member:${members}" class="table-row">
+			<td th:text=${member.memberId}>Id</td>
+			<td th:text=${member.firstName}>First Name</td>
+			<td th:text=${member.secondName}>Second Name</td>
+			<td th:text=${member.lastName}>Last Name</td>
+			<td th:text=${member.username}>User Name</td>
+			<td th:text=${member.password}>Password</td>
+			<td><a href="EditMember.html"
+				th:href="@{/member/edit/}+${member.memberId}">Edit</a></td>
+			<td><a href="DeleteMember.html"
+				th:href="@{/member/delete/}+${member.memberId}">Delete</a></td>
+		</tr>
+	</table>
+    <br/>
+	<div th:replace="fragments/general.html :: footer"></div>
+	
+</body>
+</html>

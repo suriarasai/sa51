@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Facility Form</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/style.css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:insert="fragments/general.html :: header"> </header>
+	<div th:replace="fragments/general.html :: menu"></div>
+
+	<h1>Facility Form</h1>
+	<form action="#" th:object="${facility}" th:action="@{/facility/save}"
+		method="post">
+		<fieldset>
+			<input type="hidden" th:field="*{facilityId}">
+		</fieldset>
+		<fieldset>
+			Facility Name <input type="text" th:field="*{name}">
+			<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+		</fieldset>
+		<fieldset>
+			Facility Description
+			<textarea th:field="*{description}" cols="30" rows="10"></textarea>
+			<p th:if="${#fields.hasErrors('description')}"
+				th:errors="*{description}"></p>
+		</fieldset>
+
+		<fieldset>
+			<input type="submit" value="Save"/>
+			&nbsp; &nbsp; 	
+			<input type="reset" value="Reset"/>
+		</fieldset>
+
+	</form>
+
+	<br />
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>

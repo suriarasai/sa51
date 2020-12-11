@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Booking Form</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/style.css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:insert="fragments/general.html :: header"> </header>
+	<div th:replace="fragments/general.html :: menu"></div>
+
+	<h1>Facility Booking Form</h1>
+	<form action="#" th:object="${booking}" th:action="@{/booking/save}"
+		method="post">
+		<fieldset>
+			<input type="hidden" th:field="*{bookingId}">
+		</fieldset>
+		<fieldset>
+			Member Name <select th:field="*{member.firstName}">
+				<option th:each="mname:${mnames}" th:value="${mname}"
+					th:text="${mname}"></option>
+			</select>
+		</fieldset>
+		<fieldset>
+			Facility Name <select th:field="*{facility.name}">
+				<option th:each="fname:${fnames}" th:value="${fname}"
+					th:text="${fname}"></option>
+			</select>
+		</fieldset>
+		<fieldset>
+			Start Date: <input type="text" th:field="*{startDate}"
+				placeholder="dd-MM-yyyy"
+				th:text="${#dates.format(booking.startDate, 'dd-MM-yyyy')}" />
+			<p th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></p>
+		</fieldset>
+		<fieldset>
+			End Date: <input type="text" th:field="*{endDate}"
+				placeholder="dd-MM-yyyy"
+				th:text="${#dates.format(booking.endDate, 'dd-MM-yyyy')}" />
+			<p th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></p>
+		</fieldset>
+		<fieldset>
+			Comments:
+			<textarea name="comments" th:text="*{comments}"></textarea>
+		</fieldset>
+		<fieldset>
+			<input type="submit" value="Save"/>
+			&nbsp; &nbsp; 	
+			<input type="reset" value="Reset"/>
+		</fieldset>
+
+	</form>
+	<br />
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>
